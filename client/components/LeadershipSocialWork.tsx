@@ -5,7 +5,7 @@ const leadershipRoles = [
   {
     id: 1,
     title: "SGC Core Member & Technical Head",
-    organization: "Student Government Council",
+    organization: "Students Guidance Cell",
     period: "2021 - 2024",
     description:
       "Led technical initiatives and coordinated student government activities, driving digital transformation and technical innovation.",
