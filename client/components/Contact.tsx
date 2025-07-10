@@ -329,7 +329,7 @@ export default function Contact() {
             "Building the future, one algorithm at a time."
           </p>
           <p className="text-cyan-400 font-semibold">
-            © 2024 Prakash K. All rights reserved.
+            © 2025 Prakash K. All rights reserved.
           </p>
         </motion.div>
       </div>
