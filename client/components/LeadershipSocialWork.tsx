@@ -10,8 +10,8 @@ const leadershipRoles = [
     description:
       "Led technical initiatives and coordinated student government activities, driving digital transformation and technical innovation.",
     achievements: [
-      "Spearheaded digital transformation projects for student services",
-      "Managed technical teams for various events and initiatives",
+      "Conducted 10+ workshops on technical skills and career development",
+      "Organized 3 National Level Symposiums with industry experts",
       "Developed student portal and management systems",
       "Coordinated between technical and administrative teams",
     ],
