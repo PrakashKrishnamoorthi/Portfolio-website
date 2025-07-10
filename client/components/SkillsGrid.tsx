@@ -4,134 +4,99 @@ import { useState } from "react";
 const skillCategories = [
   {
     id: 1,
-    title: "AI/ML Frameworks",
-    icon: "🤖",
+    title: "Programming",
+    icon: "💻",
     color: "#00ffff",
     skills: [
-      { name: "PyTorch", level: 95, icon: "🔥" },
-      { name: "TensorFlow", level: 90, icon: "📊" },
-      { name: "Scikit-learn", level: 88, icon: "📈" },
-      { name: "OpenCV", level: 85, icon: "👁️" },
-      { name: "Hugging Face", level: 82, icon: "🤗" },
+      { name: "Python 3", icon: "🐍" },
+      { name: "Embedded C", icon: "⚡" },
+      { name: "C++", icon: "⚙️" },
+      { name: "JavaScript", icon: "🟨" },
     ],
   },
   {
     id: 2,
-    title: "Programming Languages",
-    icon: "💻",
+    title: "ML Frameworks",
+    icon: "🤖",
     color: "#9333ea",
     skills: [
-      { name: "Python", level: 95, icon: "🐍" },
-      { name: "JavaScript", level: 88, icon: "⚡" },
-      { name: "Java", level: 85, icon: "☕" },
-      { name: "C/C++", level: 80, icon: "⚙️" },
-      { name: "SQL", level: 85, icon: "🗃️" },
+      { name: "PyTorch", icon: "🔥" },
+      { name: "TensorFlow", icon: "📊" },
+      { name: "Scikit-learn", icon: "📈" },
     ],
   },
   {
     id: 3,
-    title: "Cloud & DevOps",
-    icon: "☁️",
+    title: "NLP/GenAI",
+    icon: "🧠",
     color: "#ec4899",
     skills: [
-      { name: "AWS", level: 78, icon: "🌐" },
-      { name: "Docker", level: 82, icon: "🐳" },
-      { name: "Kubernetes", level: 75, icon: "⚙️" },
-      { name: "Git/GitHub", level: 92, icon: "📂" },
-      { name: "CI/CD", level: 80, icon: "🔄" },
+      { name: "Transformers", icon: "🔄" },
+      { name: "OpenAI GPT-3.5", icon: "🤖" },
+      { name: "Google GenAI", icon: "🎯" },
     ],
   },
   {
     id: 4,
-    title: "Web Technologies",
-    icon: "🌐",
+    title: "Data Handling",
+    icon: "📊",
     color: "#10b981",
     skills: [
-      { name: "React.js", level: 90, icon: "⚛️" },
-      { name: "Node.js", level: 85, icon: "💚" },
-      { name: "FastAPI", level: 88, icon: "🚀" },
-      { name: "Spring Boot", level: 82, icon: "🍃" },
-      { name: "MongoDB", level: 80, icon: "🍃" },
+      { name: "Pandas", icon: "🐼" },
+      { name: "NumPy", icon: "🔢" },
+      { name: "SQL", icon: "🗃️" },
+      { name: "Polaris", icon: "⭐" },
+      { name: "PyDoc", icon: "📚" },
     ],
   },
   {
     id: 5,
-    title: "AI/ML Specializations",
-    icon: "🧠",
+    title: "APIs & Deployment",
+    icon: "🚀",
     color: "#f59e0b",
     skills: [
-      { name: "Natural Language Processing", level: 90, icon: "💬" },
-      { name: "Computer Vision", level: 85, icon: "👁️" },
-      { name: "Deep Learning", level: 88, icon: "🔮" },
-      { name: "Neural Networks", level: 87, icon: "🕸���" },
-      { name: "MLOps", level: 82, icon: "⚡" },
+      { name: "REST APIs", icon: "🌐" },
+      { name: "Docker", icon: "🐳" },
     ],
   },
   {
     id: 6,
-    title: "Hardware & Embedded",
-    icon: "🔧",
+    title: "Cloud & Tools",
+    icon: "☁️",
     color: "#ef4444",
     skills: [
-      { name: "Jetson Nano", level: 85, icon: "🖥️" },
-      { name: "Embedded C", level: 78, icon: "⚡" },
-      { name: "Arduino", level: 80, icon: "🔌" },
-      { name: "Sensor Integration", level: 83, icon: "📡" },
-      { name: "Edge AI", level: 85, icon: "🎯" },
+      { name: "AWS", icon: "☁️" },
+      { name: "Git", icon: "📂" },
+      { name: "GitHub", icon: "🐙" },
+      { name: "Jupyter", icon: "📓" },
+      { name: "Vite", icon: "⚡" },
+      { name: "VS Code", icon: "🔧" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Hardware & Others",
+    icon: "🔧",
+    color: "#8b5cf6",
+    skills: [
+      { name: "Mavlink", icon: "📡" },
+      { name: "Raspberry Pi", icon: "🍓" },
+      { name: "Lidar LD-19", icon: "📏" },
+      { name: "NVIDIA Jetpack", icon: "🎮" },
+      { name: "OpenCV", icon: "👁️" },
+      { name: "Mediapipe", icon: "🤚" },
     ],
   },
 ];
-
-const SkillBar = ({ skill, delay, color }: any) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay }}
-      viewport={{ once: true }}
-      className="mb-4"
-    >
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-gray-300 font-medium flex items-center gap-2">
-          <span>{skill.icon}</span>
-          {skill.name}
-        </span>
-        <span className="text-cyan-400 font-bold">{skill.level}%</span>
-      </div>
-      <div className="relative h-3 bg-gray-800 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          transition={{ duration: 1.5, delay: delay + 0.3, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="absolute top-0 left-0 h-full rounded-full"
-          style={{
-            background: `linear-gradient(90deg, ${color}80, ${color})`,
-            boxShadow: `0 0 10px ${color}60`,
-          }}
-        />
-        <motion.div
-          animate={{
-            x: ["-100%", "100%"],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-0 left-0 h-full w-1/4 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-          style={{ left: `${skill.level}%` }}
-        />
-      </div>
-    </motion.div>
-  );
-};
 
 export default function SkillsGrid() {
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
   return (
-    <section className="relative py-20 px-6 bg-gradient-to-b from-background to-gray-900/50">
+    <section
+      id="skills"
+      className="relative py-20 px-6 bg-gradient-to-b from-background to-gray-900/50"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -152,7 +117,7 @@ export default function SkillsGrid() {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.id}
@@ -165,7 +130,7 @@ export default function SkillsGrid() {
                 y: -10,
                 rotateY: 5,
               }}
-              className={`group relative p-8 rounded-2xl glass-effect border transition-all duration-500 cursor-pointer ${
+              className={`group relative p-6 rounded-2xl glass-effect border transition-all duration-500 cursor-pointer ${
                 selectedCategory === category.id
                   ? `border-[${category.color}] shadow-[0_0_50px_rgba(${category.color.slice(1)},0.3)]`
                   : "border-gray-700 hover:border-gray-600"
@@ -184,16 +149,16 @@ export default function SkillsGrid() {
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.2 }}
                   transition={{ duration: 0.6 }}
-                  className="w-16 h-16 rounded-full flex items-center justify-center mr-4"
+                  className="w-12 h-12 rounded-full flex items-center justify-center mr-3"
                   style={{
                     background: `linear-gradient(135deg, ${category.color}40, ${category.color}80)`,
                     boxShadow: `0 0 20px ${category.color}60`,
                   }}
                 >
-                  <span className="text-2xl">{category.icon}</span>
+                  <span className="text-xl">{category.icon}</span>
                 </motion.div>
                 <h3
-                  className="text-xl font-bold group-hover:text-glow transition-all duration-300"
+                  className="text-lg font-bold group-hover:text-glow transition-all duration-300"
                   style={{ color: category.color }}
                 >
                   {category.title}
@@ -201,14 +166,27 @@ export default function SkillsGrid() {
               </div>
 
               {/* Skills List */}
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <SkillBar
+                  <motion.div
                     key={skillIndex}
-                    skill={skill}
-                    delay={index * 0.1 + skillIndex * 0.05}
-                    color={category.color}
-                  />
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: index * 0.1 + skillIndex * 0.05,
+                      duration: 0.4,
+                    }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    className="flex items-center p-3 rounded-lg bg-gray-800/30 border border-gray-700/50 hover:border-gray-600 transition-all duration-300 group/skill"
+                  >
+                    <span className="text-lg mr-3 group-hover/skill:scale-110 transition-transform duration-300">
+                      {skill.icon}
+                    </span>
+                    <span className="text-gray-300 font-medium group-hover/skill:text-white transition-colors duration-300">
+                      {skill.name}
+                    </span>
+                  </motion.div>
                 ))}
               </div>
 
@@ -232,7 +210,7 @@ export default function SkillsGrid() {
                   ease: "easeInOut",
                   delay: index * 0.5,
                 }}
-                className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-50"
+                className="absolute top-4 right-4 w-2 h-2 rounded-full opacity-50"
                 style={{ backgroundColor: category.color }}
               />
 
@@ -247,7 +225,7 @@ export default function SkillsGrid() {
                   ease: "easeInOut",
                   delay: index * 0.3,
                 }}
-                className="absolute bottom-6 left-6 w-2 h-2 rounded-full opacity-40"
+                className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full opacity-40"
                 style={{ backgroundColor: category.color }}
               />
             </motion.div>
@@ -293,14 +271,16 @@ export default function SkillsGrid() {
             </motion.div>
           </div>
 
-          <motion.button
+          <motion.a
+            href="https://cdn.builder.io/o/assets%2Fb26c4fb6e1e04ca4b8712ea381757839%2F716554f36880445ebf244e85ea1e14f8?alt=media&token=df47440c-ef85-40d1-8420-b56d1059e3ad&apiKey=b26c4fb6e1e04ca4b8712ea381757839"
+            download="Prakash_K_Resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-[0_0_60px_rgba(34,211,238,0.5)] overflow-hidden"
+            className="group relative inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-[0_0_60px_rgba(34,211,238,0.5)] overflow-hidden"
           >
             <span className="relative z-10">Download Technical Resume</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>
