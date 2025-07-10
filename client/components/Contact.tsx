@@ -43,7 +43,6 @@ const contactMethods = [
 const socialStats = [
   { label: "GitHub Repos", value: "25+", color: "#00ffff" },
   { label: "LinkedIn Connections", value: "500+", color: "#9333ea" },
-  { label: "Technical Articles", value: "10+", color: "#ec4899" },
   { label: "Open Source", value: "Active", color: "#10b981" },
 ];
 
