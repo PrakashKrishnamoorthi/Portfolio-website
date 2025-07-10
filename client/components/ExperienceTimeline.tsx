@@ -34,38 +34,6 @@ const experiences = [
     color: "#9333ea",
     icon: "🚀",
   },
-  {
-    id: 3,
-    title: "SGC Core Member & Technical Head",
-    company: "Student Government Council",
-    period: "2021 – 2024",
-    description:
-      "Led technical initiatives and coordinated student government activities",
-    achievements: [
-      "Spearheaded digital transformation projects",
-      "Managed technical teams for various events",
-      "Developed student portal and management systems",
-    ],
-    technologies: ["Leadership", "Project Management", "Web Development"],
-    color: "#ec4899",
-    icon: "👥",
-  },
-  {
-    id: 4,
-    title: "City Leader",
-    company: "U&I NGO",
-    period: "June 2023 – Present",
-    description:
-      "Leading social impact initiatives and community development programs",
-    achievements: [
-      "Coordinated educational programs for underprivileged children",
-      "Implemented technology solutions for NGO operations",
-      "Led community outreach and volunteer programs",
-    ],
-    technologies: ["Community Management", "Social Impact", "Leadership"],
-    color: "#10b981",
-    icon: "🌟",
-  },
 ];
 
 export default function ExperienceTimeline() {
@@ -90,7 +58,8 @@ export default function ExperienceTimeline() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Building the future through innovative technology and leadership
+            Building the future through innovative technology and industry
+            experience
           </p>
         </motion.div>
 
@@ -249,16 +218,19 @@ export default function ExperienceTimeline() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <motion.button
+          <motion.a
+            href="https://www.linkedin.com/in/prakashkbtech/"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-[0_0_60px_rgba(34,211,238,0.5)] overflow-hidden"
+            className="group relative inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-[0_0_60px_rgba(34,211,238,0.5)] overflow-hidden"
           >
             <span className="relative z-10">
               View Complete Resume on LinkedIn
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>
