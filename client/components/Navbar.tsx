@@ -53,20 +53,20 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
           >
-            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Prakash K
             </span>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation - Only show on large screens */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -76,7 +76,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium"
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium text-sm xl:text-base"
               >
                 {item.name}
               </motion.button>
@@ -88,46 +88,17 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgb(34,211,238)]"
+              className="px-4 xl:px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgb(34,211,238)] text-sm xl:text-base"
             >
               Resume
             </motion.button>
           </div>
 
-          {/* Tablet Navigation - Compact */}
-          <div className="hidden md:flex lg:hidden items-center space-x-4">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </motion.button>
-            ))}
-            <motion.button
-              onClick={downloadResume}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgb(34,211,238)]"
-            >
-              Resume
-            </motion.button>
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Show on tablet and mobile */}
           <motion.button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
-            className="md:hidden p-2 text-gray-300 hover:text-cyan-400"
+            className="lg:hidden p-2 text-gray-300 hover:text-cyan-400 z-50"
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
               <span
@@ -161,16 +132,16 @@ export default function Navbar() {
             opacity: isMobileMenuOpen ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="lg:hidden overflow-hidden"
         >
-          <div className="py-4 space-y-4 glass-effect border-t border-gray-700/50">
+          <div className="py-4 space-y-3 glass-effect border-t border-gray-700/50 px-2">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
                 whileHover={{ scale: 1.02, x: 10 }}
                 whileTap={{ scale: 0.98 }}
-                className="block w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium py-2"
+                className="block w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium py-2 px-2 rounded-lg hover:bg-gray-800/30"
               >
                 {item.name}
               </motion.button>
