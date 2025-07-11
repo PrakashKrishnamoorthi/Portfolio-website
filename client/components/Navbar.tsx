@@ -66,7 +66,36 @@ export default function Navbar() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.name}
+                onClick={() => handleNavClick(item.href)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium"
+              >
+                {item.name}
+              </motion.button>
+            ))}
+            <motion.button
+              onClick={downloadResume}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgb(34,211,238)]"
+            >
+              Resume
+            </motion.button>
+          </div>
+
+          {/* Tablet Navigation - Compact */}
+          <div className="hidden md:flex lg:hidden items-center space-x-4">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
