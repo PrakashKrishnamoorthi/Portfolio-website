@@ -60,7 +60,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Prakash K
             </span>
           </motion.div>
