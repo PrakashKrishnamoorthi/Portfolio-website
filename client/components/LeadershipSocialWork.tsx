@@ -123,13 +123,21 @@ export default function LeadershipSocialWork() {
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.2 }}
                   transition={{ duration: 0.6 }}
-                  className="w-16 h-16 rounded-full flex items-center justify-center mr-4"
+                  className="w-16 h-16 rounded-full flex items-center justify-center mr-4 overflow-hidden"
                   style={{
                     background: `linear-gradient(135deg, ${role.color}40, ${role.color}80)`,
                     boxShadow: `0 0 30px ${role.color}60`,
                   }}
                 >
-                  <span className="text-3xl">{role.icon}</span>
+                  {role.icon.startsWith("http") ? (
+                    <img
+                      src={role.icon}
+                      alt={role.organization}
+                      className="w-12 h-12 object-contain rounded-full"
+                    />
+                  ) : (
+                    <span className="text-3xl">{role.icon}</span>
+                  )}
                 </motion.div>
                 <div>
                   <h3
