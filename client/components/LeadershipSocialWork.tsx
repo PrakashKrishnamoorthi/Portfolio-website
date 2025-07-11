@@ -40,7 +40,7 @@ const leadershipRoles = [
     ],
     skills: ["Community Management", "Social Impact", "Teaching", "Leadership"],
     color: "#ec4899",
-    icon: "🌟",
+    icon: "https://cdn.builder.io/api/v1/image/assets%2Fb26c4fb6e1e04ca4b8712ea381757839%2F25c225660e714f9b94fb47651de04963?format=webp&width=800",
     category: "Social Work",
   },
 ];
