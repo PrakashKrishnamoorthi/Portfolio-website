@@ -22,7 +22,7 @@ const leadershipRoles = [
       "Web Development",
     ],
     color: "#00ffff",
-    icon: "👥",
+    icon: "https://cdn.builder.io/api/v1/image/assets%2Fb26c4fb6e1e04ca4b8712ea381757839%2F2693ded65b77492c906ac724138277d7?format=webp&width=800",
     category: "Leadership",
   },
   {
