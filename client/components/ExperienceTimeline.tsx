@@ -6,7 +6,7 @@ const experiences = [
     id: 1,
     title: "Application Development Intern",
     company: "Zulu Defence Systems Pvt. Ltd.",
-    period: "May 2024 – July 2024",
+    period: "April 2024 – May 2024",
     description:
       "Developed hybrid AI system using Ardupilot, Embedded C, and Python",
     achievements: [
