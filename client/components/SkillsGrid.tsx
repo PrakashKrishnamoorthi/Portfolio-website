@@ -21,12 +21,11 @@ const skills = [
   { name: "Pandas", icon: "🐼", category: "Data Handling" },
   { name: "NumPy", icon: "🔢", category: "Data Handling" },
   { name: "SQL", icon: "🗃️", category: "Data Handling" },
-  { name: "Polaris", icon: "⭐", category: "Data Handling" },
+
   { name: "PyDoc", icon: "📚", category: "Data Handling" },
 
   // APIs & Deployment
   { name: "REST APIs", icon: "🌐", category: "APIs & Deployment" },
-  { name: "Docker", icon: "🐳", category: "APIs & Deployment" },
 
   // Cloud & Tools
   { name: "AWS", icon: "☁️", category: "Cloud & Tools" },
@@ -39,7 +38,7 @@ const skills = [
   // Hardware & Others
   { name: "Mavlink", icon: "📡", category: "Hardware & Others" },
   { name: "Raspberry Pi", icon: "🍓", category: "Hardware & Others" },
-  { name: "Lidar LD-19", icon: "📏", category: "Hardware & Others" },
+
   { name: "NVIDIA Jetpack", icon: "🎮", category: "Hardware & Others" },
   { name: "OpenCV", icon: "👁️", category: "Hardware & Others" },
   { name: "Mediapipe", icon: "🤚", category: "Hardware & Others" },
