@@ -58,6 +58,7 @@ const MatrixRain = () => {
 
 const profileImages = [
   "https://cdn.builder.io/api/v1/image/assets%2Fb26c4fb6e1e04ca4b8712ea381757839%2F327f45d1a9494a349659f00a7d43c127?format=webp&width=800",
+  "https://cdn.builder.io/api/v1/image/assets%2Fb26c4fb6e1e04ca4b8712ea381757839%2F93c7f69350344536a69f01346c39a234?format=webp&width=800",
 ];
 
 const roles = [
